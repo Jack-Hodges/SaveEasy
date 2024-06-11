@@ -20,7 +20,9 @@ class AuthViewModel: ObservableObject {
                 goalName: "",
                 colourSchemeName: "Default",
                 goalImage: nil,
-                jobs: []
+                jobs: [],
+                parent: false,
+                linkedAccounts: ""
             )
             dataManager.fetchUser(email: email) { user in
                 DispatchQueue.main.async {
@@ -54,7 +56,9 @@ class AuthViewModel: ObservableObject {
                         goalName: "",
                         colourSchemeName: "Default",
                         goalImage: nil,
-                        jobs: []
+                        jobs: [],
+                        parent: false,
+                        linkedAccounts: ""
                     )
                     self?.dataManager.fetchUser(email: email) { user in
                         DispatchQueue.main.async {
@@ -87,7 +91,9 @@ class AuthViewModel: ObservableObject {
                         goalName: "",
                         colourSchemeName: "Default",
                         goalImage: nil,
-                        jobs: []
+                        jobs: [],
+                        parent: false,
+                        linkedAccounts: ""
                     )
                     self?.dataManager.fetchUser(email: email) { user in
                         DispatchQueue.main.async {

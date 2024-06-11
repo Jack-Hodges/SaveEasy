@@ -16,66 +16,24 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
                 if let user = authViewModel.user {
-                    user.colourScheme.backgroundColour
-                        .ignoresSafeArea()
-                    VStack {
-                        titleSection(authViewModel: authViewModel)
-                        
-                        Image("PiggyBank")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300)
-                            .scaleEffect(x: -1, y: 1)
-                            .padding(.top, -60)
-                        
-                        PiggyBankTextView(authViewModel: authViewModel)
-                        
-                        Text("\(priceString(price: user.savedAmount))/\(priceString(price: user.saveGoal))")
-                            .foregroundStyle(user.colourScheme.primaryColour)
-                            .font(.largeTitle)
-                            .fontWeight(.heavy)
-                        
-                        ColouredProgressBar(authViewModel: authViewModel)
-                            .frame(width: 300, height: 50)
-                            .padding(.top, -18)
-                            .padding(.bottom, 10)
-                        
-                        Button(action: {
-                            isSheetPresented = true
-                        }, label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 50)
-                                    .frame(width: 250, height: 50)
-                                    .foregroundColor(user.colourScheme.primaryColour)
-                                Text("Change Goal")
-                                    .foregroundStyle(.white)
-                                    .font(.title)
-                                    .bold()
-                            }
-                        })
-                        
-                        Spacer()
+                    if (user.parent == false) {
+                        childView(authViewModel: authViewModel)
+                    } else {
+                        parentView(authViewModel: authViewModel)
                     }
-                    .padding(.horizontal, 10)
-                    
-                    SwipeCard(authViewModel: authViewModel, cardOffset: $cardOffset)
-                        .offset(y: 515)
-                        .edgesIgnoringSafeArea(.all)
                 } else {
                     // Handle the case where user is nil (e.g., show a loading indicator or an error message)
                     ContentView()
                 }
-            }
-            .onAppear {
-                authViewModel.refreshData()
-            }
-            .edgesIgnoringSafeArea(.bottom)
         }
         .sheet(isPresented: $isSheetPresented) {
             ChangeGoalView(authViewModel: authViewModel)
         }
+        .onAppear {
+            authViewModel.refreshData()
+        }
+        .edgesIgnoringSafeArea(.bottom)
     }
     
     func titleSection(authViewModel: AuthViewModel) -> some View {
@@ -104,6 +62,68 @@ struct HomeView: View {
                             .foregroundStyle(user.colourScheme.backgroundColour)
                     }
                 }
+            }
+        }
+    }
+    
+    func childView(authViewModel: AuthViewModel) -> some View {
+        let user = authViewModel.user!
+        return ZStack {
+            user.colourScheme.backgroundColour
+                .ignoresSafeArea()
+            VStack {
+                titleSection(authViewModel: authViewModel)
+                
+                Image("PiggyBank")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300)
+                    .scaleEffect(x: -1, y: 1)
+                    .padding(.top, -60)
+                
+                PiggyBankTextView(authViewModel: authViewModel)
+                
+                Text("\(priceString(price: user.savedAmount))/\(priceString(price: user.saveGoal))")
+                    .foregroundStyle(user.colourScheme.primaryColour)
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                
+                ColouredProgressBar(authViewModel: authViewModel)
+                    .frame(width: 300, height: 50)
+                    .padding(.top, -18)
+                    .padding(.bottom, 10)
+                
+                Button(action: {
+                    isSheetPresented = true
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 50)
+                            .frame(width: 250, height: 50)
+                            .foregroundColor(user.colourScheme.primaryColour)
+                        Text("Change Goal")
+                            .foregroundStyle(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                })
+                
+                Spacer()
+            }
+            .padding(.horizontal, 10)
+            
+            SwipeCard(authViewModel: authViewModel, cardOffset: $cardOffset)
+                .offset(y: 515)
+                .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    func parentView(authViewModel: AuthViewModel) -> some View {
+        let user = authViewModel.user!
+        return ZStack {
+            user.colourScheme.backgroundColour
+                .ignoresSafeArea()
+            VStack {
+                titleSection(authViewModel: authViewModel)
             }
         }
     }

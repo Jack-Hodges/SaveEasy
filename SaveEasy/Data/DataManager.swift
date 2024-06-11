@@ -38,8 +38,10 @@ class DataManager: ObservableObject {
                 let colourSchemeName = data["colourSchemeName"] as? String ?? "Mint"
                 let goalImage = data["goalImage"] as? String ?? ""
                 let jobs = data["jobs"] as? String ?? ""
+                let parent = data["parent"] as? Bool ?? false
+                let linkedAccounts = data["linkedAccounts"] as? String ?? ""
 
-                let user = User(id: id, email: email, firstName: firstName, lastName: lastName, profileImage: profileImage, savedAmount: savedAmount, saveGoal: saveGoal, goalName: goalName, colourSchemeName: colourSchemeName, jobs: parseJobs(from: jobs))
+                let user = User(id: id, email: email, firstName: firstName, lastName: lastName, profileImage: profileImage, savedAmount: savedAmount, saveGoal: saveGoal, goalName: goalName, colourSchemeName: colourSchemeName, jobs: parseJobs(from: jobs), parent: parent, linkedAccounts: "")
                 completion(user)
             } else {
                 completion(nil)
