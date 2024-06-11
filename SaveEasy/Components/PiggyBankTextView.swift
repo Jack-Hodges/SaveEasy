@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct PiggyBankTextView: View {
+    
+    @ObservedObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(changeText(savePercent: authViewModel.user!.percentage))
+            .foregroundStyle(authViewModel.user!.colourScheme.secondaryColour)
+            .font(.title3)
+            .bold()
+            .multilineTextAlignment(.center)
+            .padding(.top, -40)
     }
 }
 
 #Preview {
-    PiggyBankTextView()
+    PiggyBankTextView(authViewModel: AuthViewModel())
 }

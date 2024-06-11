@@ -35,17 +35,17 @@ struct JobDetailView: View {
                 }
                 .padding()
                 
-                Spacer()
-                
                 Text(job.name)
                     .font(.system(size: 50))
                     .fontWeight(.heavy)
                     .foregroundStyle(authViewModel.user!.colourScheme.primaryColour)
+                    .offset(y: -20)
                 
                 Image(job.image)
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding(.leading, -10)
+                    .offset(y: -50)
                 
                 VStack(alignment: .leading) {
                     HStack {
@@ -58,14 +58,19 @@ struct JobDetailView: View {
                     .foregroundStyle(.gray)
                 }
                 .padding(.leading, -10)
+                .offset(y: -75)
                 
                 Text(priceString(price: job.price))
                     .font(.system(size: 100, weight: .bold))
                     .foregroundStyle(authViewModel.user!.colourScheme.primaryColour)
+                    .offset(y: -50)
+                
                 Text(job.description)
                     .foregroundStyle(Color.gray)
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 10)
+                    .offset(y: -40)
                 
                 Button(action: {
                     showingAlert = true

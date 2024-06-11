@@ -12,7 +12,44 @@
 		DE1AB9212BF77E46008D3B8F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AB9202BF77E46008D3B8F /* Item.swift */; };
 		DE1AB9232BF77E47008D3B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1AB9222BF77E47008D3B8F /* Assets.xcassets */; };
 		DE1AB9262BF77E47008D3B8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1AB9252BF77E47008D3B8F /* Preview Assets.xcassets */; };
+		DE1AB92E2BF77E76008D3B8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AB92D2BF77E76008D3B8F /* HomeView.swift */; };
+		DE4129262C085F3C00350461 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE4129252C085F3C00350461 /* GoogleService-Info.plist */; };
+		DE4129382C0861B100350461 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129372C0861B100350461 /* AuthViewModel.swift */; };
+		DE4129442C0863DF00350461 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129432C0863DF00350461 /* RegisterView.swift */; };
+		DE4129462C08642900350461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129452C08642900350461 /* LoginView.swift */; };
+		DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6BE2C05C838002D23C6 /* OnboardView.swift */; };
+		DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */; };
+		DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */; };
+		DE7F17F72BFDB660006969C1 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F17F62BFDB660006969C1 /* Job.swift */; };
+		DE96A3AE2C1730410056E68A /* SaveEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */; };
+		DEA37AFA2BFF0D8E00B56B34 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */; };
+		DEA37AFE2BFF121000B56B34 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37AFD2BFF121000B56B34 /* ProfileView.swift */; };
+		DEA37B002BFF12BA00B56B34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37AFF2BFF12BA00B56B34 /* User.swift */; };
+		DEA37B022BFF13B700B56B34 /* AppColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B012BFF13B700B56B34 /* AppColour.swift */; };
+		DEA37B052BFF16A800B56B34 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B042BFF16A800B56B34 /* Functions.swift */; };
+		DEA37B072BFF1C0D00B56B34 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B062BFF1C0D00B56B34 /* UserViewModel.swift */; };
+		DEA37B092BFF56B400B56B34 /* ColouredProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B082BFF56B400B56B34 /* ColouredProgressBar.swift */; };
+		DEA37B0B2BFF5BC700B56B34 /* PiggyBankTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B0A2BFF5BC700B56B34 /* PiggyBankTextView.swift */; };
+		DEA37B0D2C046EC600B56B34 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B0C2C046EC600B56B34 /* AddJobView.swift */; };
+		DEA37B0F2C04719200B56B34 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B0E2C04719200B56B34 /* NeumorphicStyle.swift */; };
+		DEA37B122C0472DF00B56B34 /* InputTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B112C0472DF00B56B34 /* InputTitle.swift */; };
+		DEA9146C2BFB52010029D9EC /* SwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9146B2BFB52010029D9EC /* SwipeCard.swift */; };
+		DEA9146F2BFB538A0029D9EC /* JobSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9146E2BFB538A0029D9EC /* JobSegment.swift */; };
+		DEC5E0352C0FF04E001455D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DEC5E0342C0FF04E001455D5 /* FirebaseAuth */; };
+		DEC5E0372C0FF04E001455D5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DEC5E0362C0FF04E001455D5 /* FirebaseFirestore */; };
+		DEC5E0392C0FF0A4001455D5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5E0382C0FF0A4001455D5 /* DataManager.swift */; };
+		DEEC34232C097C6D0012ACF8 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC34222C097C6D0012ACF8 /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE96A3AF2C1730410056E68A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE1AB9112BF77E46008D3B8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1AB9182BF77E46008D3B8F;
+			remoteInfo = SaveEasy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DE1AB9192BF77E46008D3B8F /* SaveEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,10 +58,45 @@
 		DE1AB9202BF77E46008D3B8F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DE1AB9222BF77E47008D3B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1AB9252BF77E47008D3B8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE1AB92D2BF77E76008D3B8F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DE4129252C085F3C00350461 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE4129372C0861B100350461 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		DE4129432C0863DF00350461 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		DE4129452C08642900350461 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DE75C6BE2C05C838002D23C6 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalView.swift; sourceTree = "<group>"; };
+		DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		DE7F17F62BFDB660006969C1 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		DE96A3AB2C1730410056E68A /* SaveEasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveEasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveEasyTests.swift; sourceTree = "<group>"; };
+		DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		DEA37AFD2BFF121000B56B34 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DEA37AFF2BFF12BA00B56B34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEA37B012BFF13B700B56B34 /* AppColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColour.swift; sourceTree = "<group>"; };
+		DEA37B042BFF16A800B56B34 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		DEA37B062BFF1C0D00B56B34 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DEA37B082BFF56B400B56B34 /* ColouredProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColouredProgressBar.swift; sourceTree = "<group>"; };
+		DEA37B0A2BFF5BC700B56B34 /* PiggyBankTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiggyBankTextView.swift; sourceTree = "<group>"; };
+		DEA37B0C2C046EC600B56B34 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
+		DEA37B0E2C04719200B56B34 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
+		DEA37B112C0472DF00B56B34 /* InputTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTitle.swift; sourceTree = "<group>"; };
+		DEA9146B2BFB52010029D9EC /* SwipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCard.swift; sourceTree = "<group>"; };
+		DEA9146E2BFB538A0029D9EC /* JobSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSegment.swift; sourceTree = "<group>"; };
+		DEC5E0382C0FF0A4001455D5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		DEEC34222C097C6D0012ACF8 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DE1AB9162BF77E46008D3B8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEC5E0352C0FF04E001455D5 /* FirebaseAuth in Frameworks */,
+				DEC5E0372C0FF04E001455D5 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE96A3A82C1730410056E68A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1AB91B2BF77E46008D3B8F /* SaveEasy */,
+				DE96A3AC2C1730410056E68A /* SaveEasyTests */,
 				DE1AB91A2BF77E46008D3B8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1AB9192BF77E46008D3B8F /* SaveEasy.app */,
+				DE96A3AB2C1730410056E68A /* SaveEasyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +127,13 @@
 		DE1AB91B2BF77E46008D3B8F /* SaveEasy */ = {
 			isa = PBXGroup;
 			children = (
+				DE4129322C0860A800350461 /* Authentication */,
+				DE4129252C085F3C00350461 /* GoogleService-Info.plist */,
+				DEA37B102C0472D300B56B34 /* Styles */,
+				DEA37B032BFF16A100B56B34 /* Functions */,
+				DE7F17F52BFDB654006969C1 /* Data */,
+				DEA9146D2BFB537A0029D9EC /* Components */,
+				DE1AB92C2BF77E6B008D3B8F /* Views */,
 				DE1AB91C2BF77E46008D3B8F /* SaveEasyApp.swift */,
 				DE1AB91E2BF77E46008D3B8F /* ContentView.swift */,
 				DE1AB9202BF77E46008D3B8F /* Item.swift */,
@@ -68,6 +149,95 @@
 				DE1AB9252BF77E47008D3B8F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE1AB92C2BF77E6B008D3B8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE96A3B42C1737790056E68A /* Sheets */,
+				DE4129422C0863CC00350461 /* User */,
+				DE1AB92D2BF77E76008D3B8F /* HomeView.swift */,
+				DEA9146B2BFB52010029D9EC /* SwipeCard.swift */,
+				DE75C6BE2C05C838002D23C6 /* OnboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE4129322C0860A800350461 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DE4129372C0861B100350461 /* AuthViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DE4129422C0863CC00350461 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DEA37AFD2BFF121000B56B34 /* ProfileView.swift */,
+				DE4129432C0863DF00350461 /* RegisterView.swift */,
+				DE4129452C08642900350461 /* LoginView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DE7F17F52BFDB654006969C1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DE7F17F62BFDB660006969C1 /* Job.swift */,
+				DEA37AFF2BFF12BA00B56B34 /* User.swift */,
+				DEA37B012BFF13B700B56B34 /* AppColour.swift */,
+				DEA37B062BFF1C0D00B56B34 /* UserViewModel.swift */,
+				DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */,
+				DEC5E0382C0FF0A4001455D5 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DE96A3AC2C1730410056E68A /* SaveEasyTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */,
+			);
+			path = SaveEasyTests;
+			sourceTree = "<group>";
+		};
+		DE96A3B42C1737790056E68A /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */,
+				DEA37B0C2C046EC600B56B34 /* AddJobView.swift */,
+				DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		DEA37B032BFF16A100B56B34 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				DEA37B042BFF16A800B56B34 /* Functions.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		DEA37B102C0472D300B56B34 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				DEA37B0E2C04719200B56B34 /* NeumorphicStyle.swift */,
+				DEA37B112C0472DF00B56B34 /* InputTitle.swift */,
+				DEEC34222C097C6D0012ACF8 /* CheckboxToggleStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		DEA9146D2BFB537A0029D9EC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9146E2BFB538A0029D9EC /* JobSegment.swift */,
+				DEA37B082BFF56B400B56B34 /* ColouredProgressBar.swift */,
+				DEA37B0A2BFF5BC700B56B34 /* PiggyBankTextView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +256,31 @@
 			dependencies = (
 			);
 			name = SaveEasy;
+			packageProductDependencies = (
+				DEC5E0342C0FF04E001455D5 /* FirebaseAuth */,
+				DEC5E0362C0FF04E001455D5 /* FirebaseFirestore */,
+			);
 			productName = SaveEasy;
 			productReference = DE1AB9192BF77E46008D3B8F /* SaveEasy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE96A3AA2C1730410056E68A /* SaveEasyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE96A3B12C1730410056E68A /* Build configuration list for PBXNativeTarget "SaveEasyTests" */;
+			buildPhases = (
+				DE96A3A72C1730410056E68A /* Sources */,
+				DE96A3A82C1730410056E68A /* Frameworks */,
+				DE96A3A92C1730410056E68A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE96A3B02C1730410056E68A /* PBXTargetDependency */,
+			);
+			name = SaveEasyTests;
+			productName = SaveEasyTests;
+			productReference = DE96A3AB2C1730410056E68A /* SaveEasyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,6 +295,10 @@
 					DE1AB9182BF77E46008D3B8F = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					DE96A3AA2C1730410056E68A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DE1AB9182BF77E46008D3B8F;
+					};
 				};
 			};
 			buildConfigurationList = DE1AB9142BF77E46008D3B8F /* Build configuration list for PBXProject "SaveEasy" */;
@@ -114,11 +310,15 @@
 				Base,
 			);
 			mainGroup = DE1AB9102BF77E46008D3B8F;
+			packageReferences = (
+				DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = DE1AB91A2BF77E46008D3B8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DE1AB9182BF77E46008D3B8F /* SaveEasy */,
+				DE96A3AA2C1730410056E68A /* SaveEasyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +330,14 @@
 			files = (
 				DE1AB9262BF77E47008D3B8F /* Preview Assets.xcassets in Resources */,
 				DE1AB9232BF77E47008D3B8F /* Assets.xcassets in Resources */,
+				DE4129262C085F3C00350461 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE96A3A92C1730410056E68A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,13 +348,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4129382C0861B100350461 /* AuthViewModel.swift in Sources */,
+				DEA37B0F2C04719200B56B34 /* NeumorphicStyle.swift in Sources */,
 				DE1AB91F2BF77E46008D3B8F /* ContentView.swift in Sources */,
+				DEA9146F2BFB538A0029D9EC /* JobSegment.swift in Sources */,
+				DEA37B0B2BFF5BC700B56B34 /* PiggyBankTextView.swift in Sources */,
+				DEA37B092BFF56B400B56B34 /* ColouredProgressBar.swift in Sources */,
+				DEEC34232C097C6D0012ACF8 /* CheckboxToggleStyle.swift in Sources */,
+				DE4129462C08642900350461 /* LoginView.swift in Sources */,
+				DEA37AFE2BFF121000B56B34 /* ProfileView.swift in Sources */,
+				DEA37B022BFF13B700B56B34 /* AppColour.swift in Sources */,
+				DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */,
+				DEC5E0392C0FF0A4001455D5 /* DataManager.swift in Sources */,
+				DE4129442C0863DF00350461 /* RegisterView.swift in Sources */,
+				DE1AB92E2BF77E76008D3B8F /* HomeView.swift in Sources */,
+				DEA37B072BFF1C0D00B56B34 /* UserViewModel.swift in Sources */,
+				DEA37B122C0472DF00B56B34 /* InputTitle.swift in Sources */,
+				DEA37B052BFF16A800B56B34 /* Functions.swift in Sources */,
 				DE1AB9212BF77E46008D3B8F /* Item.swift in Sources */,
+				DEA37B0D2C046EC600B56B34 /* AddJobView.swift in Sources */,
+				DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */,
+				DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */,
+				DEA9146C2BFB52010029D9EC /* SwipeCard.swift in Sources */,
+				DEA37AFA2BFF0D8E00B56B34 /* JobDetailView.swift in Sources */,
+				DE7F17F72BFDB660006969C1 /* Job.swift in Sources */,
 				DE1AB91D2BF77E46008D3B8F /* SaveEasyApp.swift in Sources */,
+				DEA37B002BFF12BA00B56B34 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE96A3A72C1730410056E68A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE96A3AE2C1730410056E68A /* SaveEasyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE96A3B02C1730410056E68A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1AB9182BF77E46008D3B8F /* SaveEasy */;
+			targetProxy = DE96A3AF2C1730410056E68A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DE1AB9272BF77E47008D3B8F /* Debug */ = {
@@ -326,6 +573,42 @@
 			};
 			name = Release;
 		};
+		DE96A3B22C1730410056E68A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K88SP459TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MarqueeCo.SaveEasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveEasy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SaveEasy";
+			};
+			name = Debug;
+		};
+		DE96A3B32C1730410056E68A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K88SP459TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MarqueeCo.SaveEasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveEasy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SaveEasy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -347,7 +630,40 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DE96A3B12C1730410056E68A /* Build configuration list for PBXNativeTarget "SaveEasyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE96A3B22C1730410056E68A /* Debug */,
+				DE96A3B32C1730410056E68A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEC5E0342C0FF04E001455D5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DEC5E0362C0FF04E001455D5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE1AB9112BF77E46008D3B8F /* Project object */;
 }
