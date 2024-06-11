@@ -77,8 +77,7 @@ struct ChangeGoalView: View {
                 .foregroundStyle(user.colourScheme.primaryColour)
                 .padding(.top, -70)
             
-            if let goalImageName = user.goalImage,
-               let uiImage = UIImage(named: goalImageName) {
+            if let uiImage = UIImage(named: user.goalImage) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .frame(width: 300, height: 300)

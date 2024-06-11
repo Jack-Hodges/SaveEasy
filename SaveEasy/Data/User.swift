@@ -17,10 +17,11 @@ struct User: Identifiable, Codable {
     var saveGoal: Double
     var goalName: String
     var colourSchemeName: String
-    var goalImage: String?
+    var goalImage: String
     var jobs: [Job]
     var parent: Bool
     var linkedAccounts: String
+    var childLinkedAccounts: [User] = []
 
     var colourScheme: AppColour {
         return AppColour.getColourScheme(by: colourSchemeName) ?? AppColour(name: "Default", primaryColour: .black, secondaryColour: .gray, backgroundColour: .white)

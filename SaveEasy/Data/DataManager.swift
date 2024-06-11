@@ -10,6 +10,7 @@ import Firebase
 
 class DataManager: ObservableObject {
     @Published var currentUser: User?
+    @Published var users: [User] = []
 
     init() {}
 
@@ -41,14 +42,21 @@ class DataManager: ObservableObject {
                 let parent = data["parent"] as? Bool ?? false
                 let linkedAccounts = data["linkedAccounts"] as? String ?? ""
 
-                let user = User(id: id, email: email, firstName: firstName, lastName: lastName, profileImage: profileImage, savedAmount: savedAmount, saveGoal: saveGoal, goalName: goalName, colourSchemeName: colourSchemeName, jobs: parseJobs(from: jobs), parent: parent, linkedAccounts: "")
-                completion(user)
+                let user = User(id: id, email: email, firstName: firstName, lastName: lastName, profileImage: profileImage, savedAmount: savedAmount, saveGoal: saveGoal, goalName: goalName, colourSchemeName: colourSchemeName, goalImage: goalImage, jobs: parseJobs(from: jobs), parent: parent, linkedAccounts: linkedAccounts)
+                
+                if parent {
+                    self.fetchChildAccounts(for: user) { updatedParent in
+                        completion(updatedParent)
+                    }
+                } else {
+                    completion(user)
+                }
             } else {
                 completion(nil)
             }
         }
     }
-    
+
     func addUser(email: String, firstName: String, lastName: String, profileImage: String, saveGoal: Double, goalName: String, colourSchemeName: String, goalImage: String) {
         let id = UUID().uuidString
         let db = Firestore.firestore()
@@ -88,8 +96,37 @@ class DataManager: ObservableObject {
             DispatchQueue.main.async {
                 self?.currentUser = user
                 completion(user)
-                print("User \(user!.firstName) refreshed")
+                print("User \(user?.firstName ?? "Unknown") refreshed")
             }
+        }
+    }
+    
+    func fetchUsers(emails: [String], completion: @escaping ([User]) -> Void) {
+        var fetchedUsers: [User] = []
+        let dispatchGroup = DispatchGroup()
+
+        for email in emails {
+            dispatchGroup.enter()
+            fetchUser(email: email) { user in
+                if let user = user {
+                    fetchedUsers.append(user)
+                }
+                dispatchGroup.leave()
+            }
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            self.users = fetchedUsers
+            completion(fetchedUsers)
+        }
+    }
+
+    func fetchChildAccounts(for parentUser: User, completion: @escaping (User) -> Void) {
+        let emails = parentUser.linkedAccounts.split(separator: ";").map { String($0) }.filter { !$0.isEmpty }
+        fetchUsers(emails: emails) { fetchedUsers in
+            var updatedParentUser = parentUser
+            updatedParentUser.childLinkedAccounts = fetchedUsers
+            completion(updatedParentUser)
         }
     }
 }

@@ -20,6 +20,7 @@
 		DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6BE2C05C838002D23C6 /* OnboardView.swift */; };
 		DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */; };
 		DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */; };
+		DE781A8C2C17F8D20015F065 /* ChildProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE781A8B2C17F8D20015F065 /* ChildProgress.swift */; };
 		DE7F17F72BFDB660006969C1 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F17F62BFDB660006969C1 /* Job.swift */; };
 		DE96A3AE2C1730410056E68A /* SaveEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */; };
 		DEA37AFA2BFF0D8E00B56B34 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */; };
@@ -66,6 +67,7 @@
 		DE75C6BE2C05C838002D23C6 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalView.swift; sourceTree = "<group>"; };
 		DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		DE781A8B2C17F8D20015F065 /* ChildProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProgress.swift; sourceTree = "<group>"; };
 		DE7F17F62BFDB660006969C1 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		DE96A3AB2C1730410056E68A /* SaveEasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveEasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveEasyTests.swift; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		DE781A8A2C17F8C50015F065 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				DE781A8B2C17F8D20015F065 /* ChildProgress.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
 		DE7F17F52BFDB654006969C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		DEA9146D2BFB537A0029D9EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE781A8A2C17F8C50015F065 /* Parent */,
 				DEA9146E2BFB538A0029D9EC /* JobSegment.swift */,
 				DEA37B082BFF56B400B56B34 /* ColouredProgressBar.swift */,
 				DEA37B0A2BFF5BC700B56B34 /* PiggyBankTextView.swift */,
@@ -357,6 +368,7 @@
 				DEEC34232C097C6D0012ACF8 /* CheckboxToggleStyle.swift in Sources */,
 				DE4129462C08642900350461 /* LoginView.swift in Sources */,
 				DEA37AFE2BFF121000B56B34 /* ProfileView.swift in Sources */,
+				DE781A8C2C17F8D20015F065 /* ChildProgress.swift in Sources */,
 				DEA37B022BFF13B700B56B34 /* AppColour.swift in Sources */,
 				DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */,
 				DEC5E0392C0FF0A4001455D5 /* DataManager.swift in Sources */,

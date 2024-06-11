@@ -36,7 +36,7 @@ struct ColouredProgressBar: View {
                         .foregroundStyle(authViewModel.user!.colourScheme.primaryColour)
                         .padding(.leading, 5)
                     Spacer()
-                    if let goalImageName = authViewModel.user!.goalImage,
+                    if let goalImageName = authViewModel.user?.goalImage,
                        let uiImage = UIImage(named: goalImageName) {
                         Image(uiImage: uiImage)
                             .resizable()

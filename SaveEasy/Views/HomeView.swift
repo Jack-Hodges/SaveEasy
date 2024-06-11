@@ -8,7 +8,6 @@ import SwiftUI
 import FirebaseCore
 
 struct HomeView: View {
-    // sample user for testing
     @ObservedObject var authViewModel: AuthViewModel
     
     @State private var cardOffset: CGFloat = 0
@@ -18,8 +17,10 @@ struct HomeView: View {
         NavigationStack {
                 if let user = authViewModel.user {
                     if (user.parent == false) {
+                        // display child view
                         childView(authViewModel: authViewModel)
                     } else {
+                        // display parent view
                         parentView(authViewModel: authViewModel)
                     }
                 } else {
@@ -124,7 +125,20 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack {
                 titleSection(authViewModel: authViewModel)
+                
+                Spacer()
+                
+                if user.childLinkedAccounts.isEmpty {
+                    Text("No linked child accounts.")
+                } else {
+                    ForEach(user.childLinkedAccounts) { child in
+                        ChildProgress(user: child)
+                    }
+                }
+                
+                Spacer()
             }
+            .padding(.horizontal, 10)
         }
     }
 }

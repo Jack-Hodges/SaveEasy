@@ -19,7 +19,7 @@ class AuthViewModel: ObservableObject {
                 saveGoal: 0,
                 goalName: "",
                 colourSchemeName: "Default",
-                goalImage: nil,
+                goalImage: "",
                 jobs: [],
                 parent: false,
                 linkedAccounts: ""
@@ -55,7 +55,7 @@ class AuthViewModel: ObservableObject {
                         saveGoal: 0,
                         goalName: "",
                         colourSchemeName: "Default",
-                        goalImage: nil,
+                        goalImage: "",
                         jobs: [],
                         parent: false,
                         linkedAccounts: ""
@@ -90,7 +90,7 @@ class AuthViewModel: ObservableObject {
                         saveGoal: 0,
                         goalName: "",
                         colourSchemeName: "Default",
-                        goalImage: nil,
+                        goalImage: "",
                         jobs: [],
                         parent: false,
                         linkedAccounts: ""
