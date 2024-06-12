@@ -61,7 +61,7 @@ class DataManager: ObservableObject {
         let id = UUID().uuidString
         let db = Firestore.firestore()
         let ref = db.collection("Users").document(id)
-        ref.setData(["id": id, "email": email, "firstName": firstName, "lastName": lastName, "profileImage": profileImage, "savedAmount": 0.0, "saveGoal": saveGoal, "goalName": goalName, "colourSchemeName": colourSchemeName, "goalImage": goalImage, "jobs": ""]) { error in
+        ref.setData(["id": id, "email": email, "firstName": firstName, "lastName": lastName, "profileImage": profileImage, "savedAmount": 0.0, "saveGoal": saveGoal, "goalName": goalName, "colourSchemeName": colourSchemeName, "goalImage": goalImage, "jobs": "", "parent": false, "linkedAccounts": ""]) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -127,6 +127,28 @@ class DataManager: ObservableObject {
             var updatedParentUser = parentUser
             updatedParentUser.childLinkedAccounts = fetchedUsers
             completion(updatedParentUser)
+        }
+    }
+    
+    func pushChildJobs(users: [User], pushTo: [String], newJob: Job) {
+        let db = Firestore.firestore()
+        
+        for user in users {
+            if pushTo.contains(user.email) {
+                var updatedUser = user
+                updatedUser.jobs.append(newJob)
+                
+                let ref = db.collection("Users").document(updatedUser.id)
+                ref.updateData([
+                    "jobs": parseString(from: updatedUser.jobs)
+                ]) { error in
+                    if let error = error {
+                        print("Error updating user \(updatedUser.email): \(error.localizedDescription)")
+                    } else {
+                        print("User \(updatedUser.email) updated with new job")
+                    }
+                }
+            }
         }
     }
 }

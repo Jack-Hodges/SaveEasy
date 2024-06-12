@@ -115,6 +115,7 @@ struct ProfileView: View {
             }
         } else {
             ContentView()
+                .navigationBarBackButtonHidden()
         }
     }
 }
