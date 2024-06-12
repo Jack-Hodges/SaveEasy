@@ -156,17 +156,26 @@ struct AddJobView: View {
                         LazyVGrid(columns: columns) {
                             ForEach(authViewModel.user!.childLinkedAccounts) { child in
                                 let isSelected = selectedChildEmails.contains(child.email)
-                                Text(child.firstName)
-                                    .frame(width: 175, height: 60)
-                                    .background(isSelected ? authViewModel.user?.colourScheme.backgroundColour : .white)
-                                    .cornerRadius(10)
-                                    .onTapGesture {
-                                        if isSelected {
-                                            selectedChildEmails.removeAll { $0 == child.email }
-                                        } else {
-                                            selectedChildEmails.append(child.email)
-                                        }
+                                ZStack {
+                                    Text(child.firstName)
+                                        .frame(width: 175, height: 60)
+                                        .background(.white)
+                                    
+                                    if (isSelected) {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke((authViewModel.user?.colourScheme.primaryColour)!, lineWidth: 4)
+                                            .frame(width: 160, height: 45)
                                     }
+                                        
+                                }
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    if isSelected {
+                                        selectedChildEmails.removeAll { $0 == child.email }
+                                    } else {
+                                        selectedChildEmails.append(child.email)
+                                    }
+                                }
                             }
                         }
                         .padding(.top, 10)
