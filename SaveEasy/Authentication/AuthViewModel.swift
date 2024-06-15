@@ -3,10 +3,12 @@ import FirebaseAuth
 
 class AuthViewModel: ObservableObject {
     @Published var user: User?
+    @Published var isLoading: Bool = true // Add isLoading property
     @Published var errorMessage: String?
     let dataManager = DataManager()
     
     init() {
+        self.isLoading = true // Set isLoading to true initially
         if let currentUser = Auth.auth().currentUser {
             let email = currentUser.email!
             self.user = User(
@@ -27,11 +29,14 @@ class AuthViewModel: ObservableObject {
             dataManager.fetchUser(email: email) { user in
                 DispatchQueue.main.async {
                     self.user = user
+                    self.isLoading = false // Set isLoading to false when data fetch is complete
                     if let user = user {
                         print("User \(user.firstName) Fetched")
                     }
                 }
             }
+        } else {
+            self.isLoading = false // Set isLoading to false if no current user
         }
     }
     

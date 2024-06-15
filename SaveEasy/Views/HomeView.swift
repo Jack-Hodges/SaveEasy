@@ -18,40 +18,47 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            if let user = authViewModel.user {
-                    
-                VStack {
-                    if (user.parent == false) {
-                        VStack {
-                            if (isDragging) {
-                                ProgressView()
-                            }
-                            // display child view
-                            childView(authViewModel: authViewModel)
-                        }
-                        .background(
-                            Color(authViewModel.user!.colourScheme.backgroundColour)
-                        )
-                    } else {
-                        VStack {
-                            if (isDragging) {
-                                ProgressView()
-                            }
-                            parentView(authViewModel: authViewModel)
-                        }
-                        .edgesIgnoringSafeArea(.bottom)
-                        .background(
-                            Color("PrimaryBackgroundColor")
-                                .ignoresSafeArea()
-                        )
-                        // display parent view
-                        
+            if authViewModel.isLoading {
+                ProgressView()
+                    .onAppear {
+                        authViewModel.refreshData()
                     }
-                }
-                
             } else {
-                // Handle the case where user is nil (e.g., show a loading indicator or an error message)
-                ContentView()
+                if let user = authViewModel.user {
+                    
+                    VStack {
+                        if (user.parent == false) {
+                            VStack {
+                                if (isDragging) {
+                                    ProgressView()
+                                }
+                                // display child view
+                                childView(authViewModel: authViewModel)
+                            }
+                            .background(
+                                Color(authViewModel.user!.colourScheme.backgroundColour)
+                            )
+                        } else {
+                            VStack {
+                                if (isDragging) {
+                                    ProgressView()
+                                }
+                                parentView(authViewModel: authViewModel)
+                            }
+                            .edgesIgnoringSafeArea(.bottom)
+                            .background(
+                                Color("PrimaryBackgroundColor")
+                                    .ignoresSafeArea()
+                            )
+                            // display parent view
+                            
+                        }
+                    }
+                    
+                } else {
+                    // Handle the case where user is nil (e.g., show a loading indicator or an error message)
+                    ContentView()
+                }
             }
         }
         .sheet(isPresented: $isSheetPresented) {
