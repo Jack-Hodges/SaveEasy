@@ -10,7 +10,7 @@ import SwiftUI
 struct ChildProgressLinear: View {
     @State var user: User
     var body: some View {
-        ForEach(user.childLinkedAccounts) { child in
+        ForEach(user.linkedAccounts) { child in
             ZStack {
                 Color(.white)
                 HStack {

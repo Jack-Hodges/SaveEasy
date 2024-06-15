@@ -17,6 +17,7 @@
 		DE4129382C0861B100350461 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129372C0861B100350461 /* AuthViewModel.swift */; };
 		DE4129442C0863DF00350461 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129432C0863DF00350461 /* RegisterView.swift */; };
 		DE4129462C08642900350461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129452C08642900350461 /* LoginView.swift */; };
+		DE60F5862C1D5CAD009D26AF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DE60F5852C1D5CAD009D26AF /* FirebaseStorage */; };
 		DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6BE2C05C838002D23C6 /* OnboardView.swift */; };
 		DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */; };
 		DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */; };
@@ -99,6 +100,7 @@
 			files = (
 				DEC5E0352C0FF04E001455D5 /* FirebaseAuth in Frameworks */,
 				DEC5E0372C0FF04E001455D5 /* FirebaseFirestore in Frameworks */,
+				DE60F5862C1D5CAD009D26AF /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +286,7 @@
 			packageProductDependencies = (
 				DEC5E0342C0FF04E001455D5 /* FirebaseAuth */,
 				DEC5E0362C0FF04E001455D5 /* FirebaseFirestore */,
+				DE60F5852C1D5CAD009D26AF /* FirebaseStorage */,
 			);
 			productName = SaveEasy;
 			productReference = DE1AB9192BF77E46008D3B8F /* SaveEasy.app */;
@@ -681,6 +684,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE60F5852C1D5CAD009D26AF /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		DEC5E0342C0FF04E001455D5 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

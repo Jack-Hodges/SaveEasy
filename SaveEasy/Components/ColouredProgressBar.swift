@@ -36,20 +36,20 @@ struct ColouredProgressBar: View {
                         .foregroundStyle(authViewModel.user!.colourScheme.primaryColour)
                         .padding(.leading, 5)
                     Spacer()
-                    if let goalImageName = authViewModel.user?.goalImage,
-                       let uiImage = UIImage(named: goalImageName) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .opacity(0.9)
-                    } else {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .opacity(0.9)
-                    }
+//                    if let goalImageName = authViewModel.user?.goalImage,
+//                       let uiImage = UIImage(named: goalImageName) {
+//                        Image(uiImage: uiImage)
+//                            .resizable()
+//                            .frame(width: 50, height: 50)
+//                            .clipShape(Circle())
+//                            .opacity(0.9)
+//                    } else {
+//                        Image(systemName: "photo")
+//                            .resizable()
+//                            .frame(width: 50, height: 50)
+//                            .clipShape(Circle())
+//                            .opacity(0.9)
+//                    }
                 }
                 .padding(5)
             }

@@ -95,7 +95,9 @@ struct JobDetailView: View {
                     primaryButton: .default(Text("Yes")) {
                         authViewModel.user!.savedAmount += job.price
                         authViewModel.removeJob(jobId: job.id)
-                        authViewModel.dataManager.updateUser(authViewModel.user!)
+                        authViewModel.updateUser(user: authViewModel.user!)
+                        authViewModel.dataManager.finishJob(emails: authViewModel.user!.linkedAccountString, job: job)
+                        authViewModel.refreshData()
                         presentationMode.wrappedValue.dismiss()
                     },
                     secondaryButton: .cancel()

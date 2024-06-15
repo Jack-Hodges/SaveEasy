@@ -19,21 +19,32 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             if let user = authViewModel.user {
-                ZStack {
-                    user.colourScheme.backgroundColour
-                        .ignoresSafeArea()
                     
-                    VStack {
-                        if (isDragging) {
-                            ProgressView()
-                        }
-                        if (user.parent == false) {
+                VStack {
+                    if (user.parent == false) {
+                        VStack {
+                            if (isDragging) {
+                                ProgressView()
+                            }
                             // display child view
                             childView(authViewModel: authViewModel)
-                        } else {
-                            // display parent view
+                        }
+                        .background(
+                            Color(authViewModel.user!.colourScheme.backgroundColour)
+                        )
+                    } else {
+                        VStack {
+                            if (isDragging) {
+                                ProgressView()
+                            }
                             parentView(authViewModel: authViewModel)
                         }
+                        .background(
+                            Color("PrimaryBackgroundColor")
+                                .ignoresSafeArea()
+                        )
+                        // display parent view
+                        
                     }
                 }
                 
@@ -84,6 +95,7 @@ struct HomeView: View {
     func childView(authViewModel: AuthViewModel) -> some View {
         let user = authViewModel.user!
         return ZStack {
+            
             VStack {
                 titleSection(authViewModel: authViewModel)
                 
@@ -143,29 +155,42 @@ struct HomeView: View {
     func parentView(authViewModel: AuthViewModel) -> some View {
         let user = authViewModel.user!
         return VStack {
-            titleSection(authViewModel: authViewModel)
-            
-            // linked accounts section
-            HStack {
-                Text("Linked Accounts")
-                    .foregroundStyle(user.colourScheme.secondaryColour)
-                    .font(.system(size: 30, weight: .bold))
-                Spacer()
-                Picker(selection: $childLayout, label: Text("Picker")) {
-                    Image(systemName: "list.dash").tag("List")
-                    Image(systemName: "square.grid.2x2").tag("Grid")
+            VStack {
+                
+                titleSection(authViewModel: authViewModel)
+                
+                // linked accounts section
+                HStack {
+                    Text("Linked Accounts")
+                        .foregroundStyle(user.colourScheme.secondaryColour)
+                        .font(.system(size: 30, weight: .bold))
+                    Spacer()
+                    Picker(selection: $childLayout, label: Text("Picker")) {
+                        Image(systemName: "list.dash").tag("List")
+                        Image(systemName: "square.grid.2x2").tag("Grid")
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 100)
                 }
-                .pickerStyle(.segmented)
-                .frame(width: 100)
+                .padding(.leading, 5)
+                
+                if user.linkedAccountString.isEmpty {
+                    Text("No linked child accounts.")
+                } else {
+                    (childLayout == "List") ? AnyView(ChildProgressLinear(user: user)) : AnyView(ChildProgressBlock(user: user))
+                }
+                // end linked accounts section
             }
-            .padding(.leading, 5)
-            
-            if user.childLinkedAccounts.isEmpty {
-                Text("No linked child accounts.")
-            } else {
-                (childLayout == "List") ? AnyView(ChildProgressLinear(user: user)) : AnyView(ChildProgressBlock(user: user))
-            }
-            // end linked accounts section
+            .gesture(
+                DragGesture()
+                    .onChanged({ _ in
+                        isDragging = true
+                    })
+                    .onEnded({ _ in
+                        isDragging = false
+                        authViewModel.refreshData()
+                    })
+            )
             
             // job section
             HStack {
@@ -182,22 +207,22 @@ struct HomeView: View {
             }
             .padding(.leading, 5)
             
+            ScrollView {
+                ForEach(user.jobs) { job in
+                    JobSegment(job: job, authViewModel: authViewModel)
+                }
+            }
+            
             Spacer()
         }
         .padding(.horizontal, 10)
-        .gesture(
-            DragGesture()
-                .onChanged({ _ in
-                    isDragging = true
-                })
-                .onEnded({ _ in
-                    isDragging = false
-                    authViewModel.refreshData()
-                })
-        )
         .sheet(isPresented: $isAddJobSheetPresented) {
             AddJobView(authViewModel: authViewModel)
         }
+        .background(
+            Color("PrimaryBackgroundColor")
+            .ignoresSafeArea()
+        )
     }
 }
 

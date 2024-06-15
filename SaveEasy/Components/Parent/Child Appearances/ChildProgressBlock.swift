@@ -17,7 +17,7 @@ struct ChildProgressBlock: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(user.childLinkedAccounts) { child in
+            ForEach(user.linkedAccounts) { child in
                 ZStack {
                     Color(.white)
                     VStack(alignment: .leading) {
