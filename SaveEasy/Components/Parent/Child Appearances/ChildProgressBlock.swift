@@ -45,7 +45,6 @@ struct ChildProgressBlock: View {
                 }
                 .frame(width: 175, height: 175)
                 .cornerRadius(20)
-                .shadow(radius: 10)
             }
         }
     }

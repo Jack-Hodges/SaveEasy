@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Job: Identifiable, Codable, Equatable {
+struct Job: Identifiable, Codable, Equatable, Hashable {
     var id: String
     var name: String
     var dueDate: Date?

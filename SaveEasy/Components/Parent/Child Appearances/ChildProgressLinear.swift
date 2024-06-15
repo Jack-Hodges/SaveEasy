@@ -35,9 +35,8 @@ struct ChildProgressLinear: View {
                 }
                 .padding()
             }
-            .frame(width: 350, height: 100)
+            .frame(width: 375, height: 100)
             .cornerRadius(20)
-            .shadow(radius: 10)
         }
     }
 }

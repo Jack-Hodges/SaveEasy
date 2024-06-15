@@ -94,3 +94,19 @@ func parseString(from input: [Job]) -> String {
     
     return outputString
 }
+
+func createChildJobsDictionary(for user: User) -> [Job: [String]] {
+    var jobsDictionary = [Job: [String]]()
+
+    for child in user.linkedAccounts {
+        for job in child.jobs {
+            if jobsDictionary[job] != nil {
+                jobsDictionary[job]?.append(child.firstName)
+            } else {
+                jobsDictionary[job] = [child.firstName]
+            }
+        }
+    }
+    
+    return jobsDictionary
+}

@@ -56,9 +56,6 @@ struct HomeView: View {
         .sheet(isPresented: $isSheetPresented) {
             ChangeGoalView(authViewModel: authViewModel)
         }
-        .onAppear {
-            authViewModel.refreshData()
-        }
         .edgesIgnoringSafeArea(.bottom)
     }
     
@@ -150,6 +147,9 @@ struct HomeView: View {
                 .offset(y: 515)
                 .edgesIgnoringSafeArea(.all)
         }
+        .onAppear {
+            authViewModel.refreshData()
+        }
     }
     
     func parentView(authViewModel: AuthViewModel) -> some View {
@@ -177,7 +177,11 @@ struct HomeView: View {
                 if user.linkedAccountString.isEmpty {
                     Text("No linked child accounts.")
                 } else {
-                    (childLayout == "List") ? AnyView(ChildProgressLinear(user: user)) : AnyView(ChildProgressBlock(user: user))
+                    if (childLayout == "List") {
+                        ChildProgressLinear(user: user)
+                    } else {
+                        ChildProgressBlock(user: user)
+                    }
                 }
                 // end linked accounts section
             }
@@ -207,10 +211,16 @@ struct HomeView: View {
             }
             .padding(.leading, 5)
             
+            // change scroll view to new job view
+            let jobsDictionary = createChildJobsDictionary(for: user)
             ScrollView {
-                ForEach(user.jobs) { job in
-                    JobSegment(job: job, authViewModel: authViewModel)
+                ForEach(Array(jobsDictionary.keys), id: \.id) { job in
+                    if let assignees = jobsDictionary[job] {
+                        JobSegmentAssigned(job: job, authViewModel: authViewModel, assignees: assignees)
+                            .padding(.bottom, 20)
+                    }
                 }
+                .padding(.horizontal, -10)
             }
             
             Spacer()
@@ -223,6 +233,9 @@ struct HomeView: View {
             Color("PrimaryBackgroundColor")
             .ignoresSafeArea()
         )
+        .onAppear {
+            authViewModel.refreshData()
+        }
     }
 }
 

@@ -18,6 +18,7 @@
 		DE4129442C0863DF00350461 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129432C0863DF00350461 /* RegisterView.swift */; };
 		DE4129462C08642900350461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129452C08642900350461 /* LoginView.swift */; };
 		DE60F5862C1D5CAD009D26AF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DE60F5852C1D5CAD009D26AF /* FirebaseStorage */; };
+		DE60F5882C1D6861009D26AF /* JobSegmentAssigned.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */; };
 		DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6BE2C05C838002D23C6 /* OnboardView.swift */; };
 		DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */; };
 		DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */; };
@@ -67,6 +68,7 @@
 		DE4129372C0861B100350461 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		DE4129432C0863DF00350461 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DE4129452C08642900350461 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSegmentAssigned.swift; sourceTree = "<group>"; };
 		DE75C6BE2C05C838002D23C6 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalView.swift; sourceTree = "<group>"; };
 		DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DE781A8F2C1832B70015F065 /* Child Appearances */,
+				DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				DEA37B052BFF16A800B56B34 /* Functions.swift in Sources */,
 				DE1AB9212BF77E46008D3B8F /* Item.swift in Sources */,
 				DEA37B0D2C046EC600B56B34 /* AddJobView.swift in Sources */,
+				DE60F5882C1D6861009D26AF /* JobSegmentAssigned.swift in Sources */,
 				DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */,
 				DE781A912C18362C0015F065 /* ChildDetailView.swift in Sources */,
 				DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */,
