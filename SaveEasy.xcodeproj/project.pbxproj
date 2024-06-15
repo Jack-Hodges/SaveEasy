@@ -17,9 +17,14 @@
 		DE4129382C0861B100350461 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129372C0861B100350461 /* AuthViewModel.swift */; };
 		DE4129442C0863DF00350461 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129432C0863DF00350461 /* RegisterView.swift */; };
 		DE4129462C08642900350461 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4129452C08642900350461 /* LoginView.swift */; };
+		DE60F5862C1D5CAD009D26AF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DE60F5852C1D5CAD009D26AF /* FirebaseStorage */; };
+		DE60F5882C1D6861009D26AF /* JobSegmentAssigned.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */; };
 		DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6BE2C05C838002D23C6 /* OnboardView.swift */; };
 		DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */; };
 		DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */; };
+		DE781A8C2C17F8D20015F065 /* ChildProgressLinear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE781A8B2C17F8D20015F065 /* ChildProgressLinear.swift */; };
+		DE781A8E2C182C7B0015F065 /* ChildProgressBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE781A8D2C182C7B0015F065 /* ChildProgressBlock.swift */; };
+		DE781A912C18362C0015F065 /* ChildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE781A902C18362C0015F065 /* ChildDetailView.swift */; };
 		DE7F17F72BFDB660006969C1 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F17F62BFDB660006969C1 /* Job.swift */; };
 		DE96A3AE2C1730410056E68A /* SaveEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */; };
 		DEA37AFA2BFF0D8E00B56B34 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */; };
@@ -63,9 +68,13 @@
 		DE4129372C0861B100350461 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		DE4129432C0863DF00350461 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DE4129452C08642900350461 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSegmentAssigned.swift; sourceTree = "<group>"; };
 		DE75C6BE2C05C838002D23C6 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalView.swift; sourceTree = "<group>"; };
 		DE75C6C22C05CA36002D23C6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		DE781A8B2C17F8D20015F065 /* ChildProgressLinear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProgressLinear.swift; sourceTree = "<group>"; };
+		DE781A8D2C182C7B0015F065 /* ChildProgressBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProgressBlock.swift; sourceTree = "<group>"; };
+		DE781A902C18362C0015F065 /* ChildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailView.swift; sourceTree = "<group>"; };
 		DE7F17F62BFDB660006969C1 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		DE96A3AB2C1730410056E68A /* SaveEasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveEasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE96A3AD2C1730410056E68A /* SaveEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveEasyTests.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 			files = (
 				DEC5E0352C0FF04E001455D5 /* FirebaseAuth in Frameworks */,
 				DEC5E0372C0FF04E001455D5 /* FirebaseFirestore in Frameworks */,
+				DE60F5862C1D5CAD009D26AF /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +191,25 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		DE781A8A2C17F8C50015F065 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				DE781A8F2C1832B70015F065 /* Child Appearances */,
+				DE60F5872C1D6861009D26AF /* JobSegmentAssigned.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		DE781A8F2C1832B70015F065 /* Child Appearances */ = {
+			isa = PBXGroup;
+			children = (
+				DE781A8B2C17F8D20015F065 /* ChildProgressLinear.swift */,
+				DE781A8D2C182C7B0015F065 /* ChildProgressBlock.swift */,
+				DE781A902C18362C0015F065 /* ChildDetailView.swift */,
+			);
+			path = "Child Appearances";
+			sourceTree = "<group>";
+		};
 		DE7F17F52BFDB654006969C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +262,7 @@
 		DEA9146D2BFB537A0029D9EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE781A8A2C17F8C50015F065 /* Parent */,
 				DEA9146E2BFB538A0029D9EC /* JobSegment.swift */,
 				DEA37B082BFF56B400B56B34 /* ColouredProgressBar.swift */,
 				DEA37B0A2BFF5BC700B56B34 /* PiggyBankTextView.swift */,
@@ -259,6 +289,7 @@
 			packageProductDependencies = (
 				DEC5E0342C0FF04E001455D5 /* FirebaseAuth */,
 				DEC5E0362C0FF04E001455D5 /* FirebaseFirestore */,
+				DE60F5852C1D5CAD009D26AF /* FirebaseStorage */,
 			);
 			productName = SaveEasy;
 			productReference = DE1AB9192BF77E46008D3B8F /* SaveEasy.app */;
@@ -357,7 +388,9 @@
 				DEEC34232C097C6D0012ACF8 /* CheckboxToggleStyle.swift in Sources */,
 				DE4129462C08642900350461 /* LoginView.swift in Sources */,
 				DEA37AFE2BFF121000B56B34 /* ProfileView.swift in Sources */,
+				DE781A8C2C17F8D20015F065 /* ChildProgressLinear.swift in Sources */,
 				DEA37B022BFF13B700B56B34 /* AppColour.swift in Sources */,
+				DE781A8E2C182C7B0015F065 /* ChildProgressBlock.swift in Sources */,
 				DE75C6C12C05C852002D23C6 /* ChangeGoalView.swift in Sources */,
 				DEC5E0392C0FF0A4001455D5 /* DataManager.swift in Sources */,
 				DE4129442C0863DF00350461 /* RegisterView.swift in Sources */,
@@ -367,7 +400,9 @@
 				DEA37B052BFF16A800B56B34 /* Functions.swift in Sources */,
 				DE1AB9212BF77E46008D3B8F /* Item.swift in Sources */,
 				DEA37B0D2C046EC600B56B34 /* AddJobView.swift in Sources */,
+				DE60F5882C1D6861009D26AF /* JobSegmentAssigned.swift in Sources */,
 				DE75C6C32C05CA36002D23C6 /* PhotoPicker.swift in Sources */,
+				DE781A912C18362C0015F065 /* ChildDetailView.swift in Sources */,
 				DE75C6BF2C05C838002D23C6 /* OnboardView.swift in Sources */,
 				DEA9146C2BFB52010029D9EC /* SwipeCard.swift in Sources */,
 				DEA37AFA2BFF0D8E00B56B34 /* JobDetailView.swift in Sources */,
@@ -653,6 +688,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE60F5852C1D5CAD009D26AF /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		DEC5E0342C0FF04E001455D5 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DEC5E0332C0FF04E001455D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

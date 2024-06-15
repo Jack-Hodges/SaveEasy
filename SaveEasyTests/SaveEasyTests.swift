@@ -81,7 +81,7 @@ final class SaveEasyTests: XCTestCase {
         let job1 = Job(id: "1", name: "Dishwasher", dueDate: Date(), price: 50, image: "Dishwasher", description: "Description for job one")
         let job2 = Job(id: "2", name: "Vacuuming", dueDate: Date(), price: 100, image: "Vacuum", description: "Description for job two")
         
-        let user = User(id: "testUserID", email: "test@example.com", firstName: "Test", lastName: "User", profileImage: "blank", savedAmount: 100.0, saveGoal: 200.0, goalName: "Test Goal", colourSchemeName: "Mint", goalImage: nil, jobs: [job1, job2])
+        let user = User(id: "testUserID", email: "test@example.com", firstName: "Test", lastName: "User", profileImage: "blank", savedAmount: 100.0, saveGoal: 200.0, goalName: "Test Goal", colourSchemeName: "Mint", goalImage: "", jobs: [job1, job2], parent: false, linkedAccountString: "")
         
         let authViewModel = AuthViewModel()
         authViewModel.user = user
@@ -89,7 +89,7 @@ final class SaveEasyTests: XCTestCase {
         // Act - Mark job1 as finished
         authViewModel.user?.savedAmount += job1.price
         authViewModel.removeJob(jobId: job1.id)
-        authViewModel.updateUser()
+        authViewModel.updateUser(user: user)
         
         // Assert
         XCTAssertEqual(authViewModel.user?.savedAmount, 150.0) // 100.0 + 50.0

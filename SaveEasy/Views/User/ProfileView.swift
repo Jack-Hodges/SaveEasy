@@ -89,7 +89,7 @@ struct ProfileView: View {
                     message: Text("Are you sure you want to reset your savings? This cannot be undone."),
                     primaryButton: .default(Text("Yes")) {
                         authViewModel.user!.savedAmount = 0.0
-                        authViewModel.updateUser()
+                        authViewModel.updateUser(user: authViewModel.user!)
                     },
                     secondaryButton: .cancel()
                 )
@@ -101,7 +101,7 @@ struct ProfileView: View {
                         if (editMode == false) {
                             authViewModel.user?.firstName = userFirstName
                             authViewModel.user?.lastName = userLastName
-                            authViewModel.updateUser()
+                            authViewModel.updateUser(user: authViewModel.user!)
                             authViewModel.refreshData()
                         }
                     }) {
@@ -115,6 +115,7 @@ struct ProfileView: View {
             }
         } else {
             ContentView()
+                .navigationBarBackButtonHidden()
         }
     }
 }

@@ -94,3 +94,34 @@ func parseString(from input: [Job]) -> String {
     
     return outputString
 }
+
+func createChildJobsArray(for user: User) -> [(job: Job, assignees: [String])] {
+    var jobsArray = [(job: Job, assignees: [String])]()
+
+    for child in user.linkedAccounts {
+        for job in child.jobs {
+            if let index = jobsArray.firstIndex(where: { $0.job == job }) {
+                jobsArray[index].assignees.append(child.firstName)
+            } else {
+                jobsArray.append((job, [child.firstName]))
+            }
+        }
+    }
+    
+    return jobsArray
+}
+
+func sortJobsByDueDate(jobsArray: [(job: Job, assignees: [String])]) -> [(job: Job, assignees: [String])] {
+    let sortedJobsArray = jobsArray.sorted {
+        if let d1 = $0.job.dueDate, let d2 = $1.job.dueDate {
+            return d1 < d2
+        } else if $0.job.dueDate != nil {
+            return true
+        } else if $1.job.dueDate != nil {
+            return false
+        } else {
+            return false
+        }
+    }
+    return sortedJobsArray
+}

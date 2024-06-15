@@ -28,12 +28,6 @@ struct SwipeCard: View {
                             .fontWeight(.heavy)
                             .foregroundStyle(Color("PrimaryTextColor"))
                         Spacer()
-                        Image(systemName: "plus")
-                            .font(.system(size: 50))
-                            .foregroundStyle(primaryCol)
-                            .onTapGesture {
-                                isAddJobSheetPresented = true
-                            }
                     }
 
                     HStack {
