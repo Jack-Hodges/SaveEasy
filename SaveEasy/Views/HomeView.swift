@@ -39,6 +39,7 @@ struct HomeView: View {
                             }
                             parentView(authViewModel: authViewModel)
                         }
+                        .edgesIgnoringSafeArea(.bottom)
                         .background(
                             Color("PrimaryBackgroundColor")
                                 .ignoresSafeArea()
@@ -212,13 +213,11 @@ struct HomeView: View {
             .padding(.leading, 5)
             
             // change scroll view to new job view
-            let jobsDictionary = createChildJobsDictionary(for: user)
+            let jobsArray = sortJobsByDueDate(jobsArray: createChildJobsArray(for: user))
             ScrollView {
-                ForEach(Array(jobsDictionary.keys), id: \.id) { job in
-                    if let assignees = jobsDictionary[job] {
-                        JobSegmentAssigned(job: job, authViewModel: authViewModel, assignees: assignees)
+                ForEach(jobsArray, id: \.job.id) { item in
+                    JobSegmentAssigned(job: item.job, authViewModel: authViewModel, assignees: item.assignees)
                             .padding(.bottom, 20)
-                    }
                 }
                 .padding(.horizontal, -10)
             }
