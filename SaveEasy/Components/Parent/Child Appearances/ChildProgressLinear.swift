@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ChildProgressLinear: View {
     @State var user: User
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ForEach(user.linkedAccounts) { child in
             ZStack {
-                Color(.white)
+                Color(colorScheme == .dark ? Color.black : Color.white)
                 HStack {
                     VStack(alignment: .leading) {
                         Text(child.firstName)

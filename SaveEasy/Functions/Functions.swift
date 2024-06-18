@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 func priceString(price: Double) -> String {
     if price.truncatingRemainder(dividingBy: 1) == 0 {
@@ -124,4 +125,15 @@ func sortJobsByDueDate(jobsArray: [(job: Job, assignees: [String])]) -> [(job: J
         }
     }
     return sortedJobsArray
+}
+
+func inputHeader(text: String) -> some View {
+    return
+        HStack {
+            Text(text)
+                .bold()
+                .foregroundStyle(Color(red: 0.843, green: 0.475, blue: 0.718))
+                .padding(.bottom, -5)
+            Spacer()
+        }
 }

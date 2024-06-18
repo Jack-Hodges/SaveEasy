@@ -17,6 +17,7 @@ struct RegisterView: View {
     @State private var goalName: String = ""
     @State private var colourSchemeName: String = ""
     @ObservedObject var authViewModel: AuthViewModel
+    @Environment(\.colorScheme) var colorScheme
     
     let columns = [
         GridItem(.flexible()),
@@ -28,35 +29,63 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             
-            HStack {
-                TextField("First Name", text: $firstName)
-                    .keyboardType(.default)
+            Text("Welcome to SaveEasy")
+                .font(.largeTitle)
+                .bold()
+                .foregroundStyle(Color(red: 0.843, green: 0.475, blue: 0.718))
+            
+            VStack {
+                inputHeader(text: "Name")
+                HStack {
+                    TextField("First Name", text: $firstName)
+                        .keyboardType(.default)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                    
+                    TextField("Last Name", text: $lastName)
+                        .keyboardType(.default)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                }
+            }
+            
+            VStack {
+                inputHeader(text: "Email")
+                TextField("Email", text: $email)
+                    .keyboardType(.emailAddress)
                     .autocapitalization(.none)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+            }
+            
+            VStack {
+                inputHeader(text: "Password")
+                
+                SecureField("Password", text: $password)
                     .padding()
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
                 
-                TextField("Last Name", text: $lastName)
-                    .keyboardType(.default)
-                    .autocapitalization(.none)
+                SecureField("Confirm Password", text: $confirmPassword)
                     .padding()
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
             }
             
-            TextField("Email", text: $email)
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
-                .padding()
-                .background(Color.gray.opacity(0.2))
+            VStack {
+                inputHeader(text: "Goal")
+                TextField("Save Goal", text: $saveGoal)
+                    .keyboardType(.decimalPad)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
-            
-            TextField("Save Goal", text: $saveGoal)
-                .keyboardType(.decimalPad)
-                .autocapitalization(.none)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
+            }
             
             TextField("Goal Name", text: $goalName)
                 .keyboardType(.default)
@@ -65,15 +94,9 @@ struct RegisterView: View {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
 
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
             
-            SecureField("Confirm Password", text: $confirmPassword)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
+            
+            Spacer()
             
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(AppColour.allColours, id: \.name) { colour in
@@ -87,7 +110,7 @@ struct RegisterView: View {
                         
                         if (colourSchemeName == colour.name) {
                             Circle()
-                                .stroke(Color.white, lineWidth: 10)
+                                .stroke(colorScheme == .dark ? Color.black : Color.white, lineWidth: 10)
                                 .frame(width: 10, height: 10)
                         }
                     }
@@ -96,20 +119,26 @@ struct RegisterView: View {
                     }
                 }
             }
-
+            
+            Spacer()
+            
             Button(action: {
                 if (firstName != "" && lastName != "" && email != "" && saveGoal != "" && password == confirmPassword && colourSchemeName != "" && goalName != "") {
                     authViewModel.register(email: email, password: password)
                     authViewModel.dataManager.addUser(email: email, firstName: firstName, lastName: lastName, profileImage: "", saveGoal: Double(saveGoal) ?? 0, goalName: goalName, colourSchemeName: colourSchemeName, goalImage: "")
                     authViewModel.login(email: email, password: password)
                 }
-            }) {
-                Text("Register")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
+            }, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 50)
+                        .frame(width: 250, height: 50)
+                        .foregroundColor(Color(red: 0.843, green: 0.475, blue: 0.718))
+                    Text("Sign Up")
+                        .foregroundStyle(.white)
+                        .font(.title)
+                        .bold()
+                }
+            })
 
             if let errorMessage = authViewModel.errorMessage {
                 Text(errorMessage)

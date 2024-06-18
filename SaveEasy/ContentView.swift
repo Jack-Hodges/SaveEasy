@@ -24,6 +24,8 @@ struct ContentView: View {
                     login.toggle()
                 }, label: {
                     Text(login ? "Sign Up" : "Login")
+                        .bold()
+                        .foregroundStyle(Color(red: 0.843, green: 0.475, blue: 0.718))
                 })
             }
         } else {

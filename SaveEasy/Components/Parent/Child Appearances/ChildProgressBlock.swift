@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChildProgressBlock: View {
     @State var user: User
+    @Environment(\.colorScheme) var colorScheme
     
     let columns = [
             GridItem(.flexible()),
@@ -19,7 +20,7 @@ struct ChildProgressBlock: View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach(user.linkedAccounts) { child in
                 ZStack {
-                    Color(.white)
+                    Color(colorScheme == .dark ? Color.black : Color.white)
                     VStack(alignment: .leading) {
                         Text(child.firstName)
                             .foregroundStyle(child.colourScheme.primaryColour)

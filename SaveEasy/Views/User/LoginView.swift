@@ -14,33 +14,57 @@ struct LoginView: View {
 
     var body: some View {
         VStack {
-            TextField("Email", text: $email)
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-
-            Button(action: {
-                authViewModel.login(email: email, password: password)
-            }) {
-                Text("Login")
-                    .foregroundColor(.white)
+            Text("Welcome to SaveEasy")
+                .font(.largeTitle)
+                .bold()
+                .foregroundStyle(Color(red: 0.843, green: 0.475, blue: 0.718))
+            
+            Image("PiggyBank")
+                .resizable()
+                .scaledToFit()
+            
+            VStack {
+                inputHeader(text: "Email")
+                TextField("Email", text: $email)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
             }
+            .padding(.bottom, 10)
+
+            VStack {
+                inputHeader(text: "Password")
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                .cornerRadius(8)
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                authViewModel.login(email: email, password: password)
+            }, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 50)
+                        .frame(width: 250, height: 50)
+                        .foregroundColor(Color(red: 0.843, green: 0.475, blue: 0.718))
+                    Text("Login")
+                        .foregroundStyle(.white)
+                        .font(.title)
+                        .bold()
+                }
+            })
 
             if let errorMessage = authViewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .padding()
             }
+            
+            Spacer()
         }
         .padding()
     }
