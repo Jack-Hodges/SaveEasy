@@ -13,3 +13,10 @@ Children can see the jobs their parents post, as well as a progress indicator sh
 
 <img width="200" alt="Screenshot 2024-06-15 at 5 00 21 PM" src="https://github.com/JackH408/SaveEasy/assets/141727294/49f1a52f-f79e-44c9-b2b5-e226074e81ee">
 <img width="200" alt="Screenshot 2024-06-15 at 5 12 53 PM" src="https://github.com/Jack-Hodges/SaveEasy/assets/141727294/d8f900c3-4503-499c-afcf-f0a54c08abf8">
+
+On signup (incomplete), users can choose their savings goal and set their colour scheme. In future development this register screen will be different for children and parents
+
+<img width="200" alt="Screenshot 2024-06-18 at 8 01 51 PM" src="https://github.com/Jack-Hodges/SaveEasy/assets/141727294/0f25ed4e-aa6c-425a-bfb4-343dda99a5cc">
+<img width="200" alt="Screenshot 2024-06-18 at 8 01 56 PM" src="https://github.com/Jack-Hodges/SaveEasy/assets/141727294/95909d8e-c1ed-43f2-8fd9-bd33def6fea1">
+<img width="200" alt="Screenshot 2024-06-18 at 8 02 05 PM" src="https://github.com/Jack-Hodges/SaveEasy/assets/141727294/bf3b59a8-a9c0-4125-aadf-63ddc193d084">
+<img width="200" alt="Screenshot 2024-06-18 at 8 02 10 PM" src="https://github.com/Jack-Hodges/SaveEasy/assets/141727294/e9aa76e7-f6dc-4281-b7b3-509fe8b2928f">
