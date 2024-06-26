@@ -38,6 +38,7 @@
 		DEA37B0D2C046EC600B56B34 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B0C2C046EC600B56B34 /* AddJobView.swift */; };
 		DEA37B0F2C04719200B56B34 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B0E2C04719200B56B34 /* NeumorphicStyle.swift */; };
 		DEA37B122C0472DF00B56B34 /* InputTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA37B112C0472DF00B56B34 /* InputTitle.swift */; };
+		DEA6E0F22C2BA4CD00AB074F /* ParentJobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6E0F12C2BA4CD00AB074F /* ParentJobDetailView.swift */; };
 		DEA9146C2BFB52010029D9EC /* SwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9146B2BFB52010029D9EC /* SwipeCard.swift */; };
 		DEA9146F2BFB538A0029D9EC /* JobSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9146E2BFB538A0029D9EC /* JobSegment.swift */; };
 		DEC5E0352C0FF04E001455D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DEC5E0342C0FF04E001455D5 /* FirebaseAuth */; };
@@ -89,6 +90,7 @@
 		DEA37B0C2C046EC600B56B34 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		DEA37B0E2C04719200B56B34 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
 		DEA37B112C0472DF00B56B34 /* InputTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTitle.swift; sourceTree = "<group>"; };
+		DEA6E0F12C2BA4CD00AB074F /* ParentJobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentJobDetailView.swift; sourceTree = "<group>"; };
 		DEA9146B2BFB52010029D9EC /* SwipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCard.swift; sourceTree = "<group>"; };
 		DEA9146E2BFB538A0029D9EC /* JobSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSegment.swift; sourceTree = "<group>"; };
 		DEC5E0382C0FF0A4001455D5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				DEA37AF92BFF0D8E00B56B34 /* JobDetailView.swift */,
 				DEA37B0C2C046EC600B56B34 /* AddJobView.swift */,
 				DE75C6C02C05C852002D23C6 /* ChangeGoalView.swift */,
+				DEA6E0F12C2BA4CD00AB074F /* ParentJobDetailView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				DE4129382C0861B100350461 /* AuthViewModel.swift in Sources */,
 				DEA37B0F2C04719200B56B34 /* NeumorphicStyle.swift in Sources */,
 				DE1AB91F2BF77E46008D3B8F /* ContentView.swift in Sources */,
+				DEA6E0F22C2BA4CD00AB074F /* ParentJobDetailView.swift in Sources */,
 				DEA9146F2BFB538A0029D9EC /* JobSegment.swift in Sources */,
 				DEA37B0B2BFF5BC700B56B34 /* PiggyBankTextView.swift in Sources */,
 				DEA37B092BFF56B400B56B34 /* ColouredProgressBar.swift in Sources */,

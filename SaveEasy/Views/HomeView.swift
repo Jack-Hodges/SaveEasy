@@ -15,6 +15,8 @@ struct HomeView: View {
     @State private var childLayout = "List"
     @State private var isDragging = false
     @State private var isAddJobSheetPresented = false
+    @State private var selectedJob: (job: Job, assignees: [String])? = nil
+    @State private var isJobSheetPresented = false
     
     var body: some View {
         NavigationStack {
@@ -225,6 +227,10 @@ struct HomeView: View {
                 ForEach(jobsArray, id: \.job.id) { item in
                     JobSegmentAssigned(job: item.job, authViewModel: authViewModel, assignees: item.assignees)
                             .padding(.bottom, 20)
+                            .onTapGesture {
+                                selectedJob = item
+                                isJobSheetPresented = true
+                            }
                 }
                 .padding(.horizontal, -10)
             }
@@ -232,6 +238,9 @@ struct HomeView: View {
             Spacer()
         }
         .padding(.horizontal, 10)
+        .sheet(isPresented: $isJobSheetPresented) {
+            ParentJobDetailView(job: selectedJob?.job ?? sampleJobs[0], assignees: selectedJob?.assignees ?? [""], authViewModel: authViewModel)
+        }
         .sheet(isPresented: $isAddJobSheetPresented) {
             AddJobView(authViewModel: authViewModel)
         }
