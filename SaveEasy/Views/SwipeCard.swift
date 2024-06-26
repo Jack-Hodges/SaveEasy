@@ -9,7 +9,7 @@ struct SwipeCard: View {
     @State private var selectedJob: Job? = nil
     @State private var isJobSheetPresented: Bool = false
     @State private var isAddJobSheetPresented: Bool = false
-    
+    @State private var isBottomPlacement: Bool = true
 
     let maxHeight = UIScreen.main.bounds.height
 
@@ -75,12 +75,20 @@ struct SwipeCard: View {
                         dragOffset = 0
 
                         withAnimation {
-                            if cardOffset < -200 {
-                                cardOffset = -390 // Snap to high position
-                            } else if cardOffset > 50 {
-                                cardOffset = 60
+                            if isBottomPlacement {
+                                if cardOffset < -50 {
+                                    cardOffset = -390 // Snap to top position
+                                    isBottomPlacement = false
+                                } else {
+                                    cardOffset = 60 // Snap back to bottom position
+                                }
                             } else {
-                                cardOffset = 0 // Snap back to original position
+                                if cardOffset > -340 {
+                                    cardOffset = 0 // Snap to bottom position
+                                    isBottomPlacement = true
+                                } else {
+                                    cardOffset = -390 // Snap back to top position
+                                }
                             }
                         }
                     }
